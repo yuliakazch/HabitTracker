@@ -23,10 +23,6 @@ class HabitListAdapter(private val viewModel: HabitListViewModel) :
             nameHabit.text = item.name
             countDays.text = item.countDays.toString()
             countSuccessDays.text = item.countSuccessDays.toString()
-            /*checkBox.isChecked = item.isDoToday
-            checkBox.setOnClickListener {
-                viewModel.updateCountSuccessDays(item, checkBox.isChecked)
-            }*/
         }
     }
 }

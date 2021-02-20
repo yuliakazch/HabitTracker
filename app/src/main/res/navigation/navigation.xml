@@ -9,7 +9,7 @@
         android:id="@+id/habitListFragment"
         android:name="com.yuliakazch.habittracker.features.habitlist.ui.HabitListFragment"
         android:label="fragment_habit_list"
-        tools:layout="@layout/fragment_habit_list" >
+        tools:layout="@layout/fragment_habit_list">
         <action
             android:id="@+id/action_habitListFragment_to_habitAddFragment"
             app:destination="@id/habitAddFragment" />

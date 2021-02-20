@@ -31,7 +31,16 @@ class HabitListFragment : Fragment() {
         navController = NavHostFragment.findNavController(this)
         setAdapter()
         setListeners()
+        initHabitList()
         return fragmentLayout
+    }
+
+    private fun setAdapter() {
+        val adapter = HabitListAdapter(viewModel)
+        fragmentLayout.listHabits.adapter = adapter
+        viewModel.listHabits.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+        }
     }
 
     private fun setListeners() {
@@ -44,11 +53,7 @@ class HabitListFragment : Fragment() {
         }
     }
 
-    private fun setAdapter() {
-        val adapter = HabitListAdapter(viewModel)
-        fragmentLayout.listHabits.adapter = adapter
-        viewModel.listHabits.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
-        }
+    private fun initHabitList() {
+        viewModel.getListHabits()
     }
 }

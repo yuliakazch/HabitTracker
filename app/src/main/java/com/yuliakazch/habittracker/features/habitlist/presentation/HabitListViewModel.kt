@@ -17,10 +17,6 @@ class HabitListViewModel @Inject constructor(
     val listHabits: LiveData<List<Habit>>
         get() = _listHabits
 
-    init {
-        getListHabits()
-    }
-
     fun getListHabits() {
         viewModelScope.launch {
             _listHabits.value = getHabitListUseCase()
